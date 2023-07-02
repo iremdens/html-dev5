@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+    <title>TRAFIK LAMBASI</title>
+    <style>
+        .light-container {
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: darkslategray;
+
+        }
+        .light {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid black;
+        }
+        .button {
+            border: 2px solid black;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            font-family:cursive;
+        }
+        #kırmızı {
+            background-color: red;
+        }
+        #sarı {
+            background-color: yellow;
+        }
+        #yesil {
+            background-color: green;
+        }
+        .active {
+            border-color: blue;
+        }
+        #kırmızıbuton {
+            background-color: red;
+        }
+        #sarıbuton {
+            background-color: yellow;
+        }
+        #yesilbuton{
+            background-color: green;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background-color:beige">
+<div class="light-container">
+    <div class="light" id="kırmızı"></div>
+    <div class="light" id="sarı"></div>
+    <div class="light" id="yesil"></div>
+</div>
+
+<button onclick="changeLight('red')" class="button" id="kırmızıbuton">KIRMIZI</button>
+<button onclick="changeLight('yellow')" class="button" id="sarıbuton">SARI</button>
+<button onclick="changeLight('green')" class="button" id="yesilbuton">YESIL</button>
+
+<script>
+    function changeLight(color) {
+        var kirmizilamba = document.getElementById("kırmızı");
+        var sarılamba= document.getElementById("sarı");
+        var yesillamba = document.getElementById("yesil");
+
+        var kirmiziButon = document.getElementById("kırmızıbuton");
+        var sariButon = document.getElementById("sarıbuton");
+        var yesilButon = document.getElementById("yesilbuton");
+
+
+        kirmizilamba.style.opacity = "0.3";
+        sarılamba.style.opacity = "0.3";
+        yesillamba.style.opacity = "0.3";
+
+
+        kirmiziButon.classList.remove("active");
+        sariButon.classList.remove("active");
+        yesilButon.classList.remove("active");
+
+
+        if (color === "red") {
+            kirmizilamba.style.opacity = "1";
+            kirmiziButon.classList.add("active");
+        } else if (color === "yellow") {
+            sarılamba.style.opacity = "1";
+            sariButon.classList.add("active");
+        } else if (color === "green") {
+            yesillamba.style.opacity = "1";
+            yesilButon.classList.add("active");
+        }
+    }
+</script>
+</body>
+</html>
